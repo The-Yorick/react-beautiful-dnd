@@ -63,6 +63,10 @@ export default ({
     draggables,
   );
 
+  if (destination.isCombineOnly) {
+    return noImpact;
+  }
+
   // Where the element actually is now.
   // Need to take into account the change of scroll in the droppable
   const pageBorderBoxWithDroppableScroll: Rect = withDroppableScroll(
